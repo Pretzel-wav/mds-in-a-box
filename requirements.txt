@@ -1,0 +1,10 @@
+pipx                    # package manager, friendly to isolated environments
+dbt-core~=1.8.0         # core package for dbt, a command-line data transformation tool
+dbt-duckdb~=1.8.0       # dbt adapter for duckDB
+pandas==2.0             # data science package
+numpy~=1.24             # data science package
+pyarrow                 # used for working with the Arrow format
+duckdb~=1.1.0           # in-process OLAP database
+sqlmesh==0.88           # framework for orchestrating data transformations
+dlt[filesystem]         # framework for building data pipelines. will install an extra set of dependencies for filesystem-based functionalities
+shandy-sqlfmt[jinjafmt] # tool for formatting SQL code. will install formatting support for jinja templates.
