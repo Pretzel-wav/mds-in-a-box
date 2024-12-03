@@ -3,6 +3,7 @@ install-uv:
 	uv pip install --system -r requirements.txt
 
 build: install-uv
+	# TODO: evaluate below structure
 	cd transform && dbt deps
 	cd evidence && npm install
 	mkdir -p data/data_catalog/raw
@@ -11,7 +12,7 @@ build: install-uv
 	mkdir -p data/data_catalog/analysis
 
 run:
-	cd dlt && python3 nba_pipeline.python
+	cd dlt && python3 nba_pipeline.python # TODO: replace python script
 	cd transform && dbt build
 	cd evidence && npm run sources
 
@@ -28,7 +29,7 @@ evidence-build:
 	cd evidence && npm run build
 
 docker-build:
-	docker build -t mdsbox .
+	docker build -t mdsbox . # TODO: Does this need Docker?
 
 docker-run-evidence:
 			docker run \
